@@ -1,0 +1,31 @@
+.onix-card {
+  border-top: 4px solid #1fbae1;
+}
+
+.table thead {
+  background: #004585;
+  color: #ffffff;
+}
+
+.course-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-onix-state {
+  background: #1fbae1;
+  border-color: #1fbae1;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-onix-state:hover,
+.btn-onix-state:focus {
+  background: #004585;
+  border-color: #004585;
+  color: #ffffff;
+}

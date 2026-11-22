@@ -1,0 +1,49 @@
+<div class="card p-4 shadow-sm onix-card">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="h4 mb-0">Lista de cursos</h2>
+    <button class="btn btn-outline-primary btn-sm" (click)="alternarLista()">
+      {{ mostrarCursos ? 'Ocultar' : 'Mostrar' }}
+    </button>
+  </div>
+
+  <div *ngIf="mostrarCursos">
+    <div *ngIf="cursos.length === 0" class="alert alert-secondary">
+      No hay cursos registrados.
+    </div>
+    <div class="table-responsive" *ngIf="cursos.length > 0">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre del curso</th>
+            <th>Docente</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let curso of cursos">
+            <td>{{ curso.id }}</td>
+            <td>{{ curso.nombre }}</td>
+            <td>{{ curso.docente }}</td>
+            <td>
+              <span class="badge" [ngClass]="curso.activo ? 'text-bg-success' : 'text-bg-secondary'">
+                {{ curso.activo ? 'Activo' : 'Inactivo' }}
+              </span>
+            </td>
+            <td>
+              <div class="course-actions">
+              <button class="btn btn-onix-state btn-sm" (click)="cambiarEstado(curso)">
+                Cambiar estado
+              </button>
+              <button class="btn btn-danger btn-sm" (click)="eliminarCurso(curso.id)">
+                Eliminar
+              </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

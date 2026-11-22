@@ -1,0 +1,18 @@
+<div class="container py-4">
+  <app-header></app-header>
+
+  <div class="row g-4 mt-1 align-items-start">
+    <div class="col-lg-3 col-md-5">
+      <app-course-form (cursoAgregado)="agregarCurso($event)"></app-course-form>
+    </div>
+    <div class="col-lg-9 col-md-7">
+      <app-course-list
+        [cursos]="cursos"
+        (cursoEliminado)="eliminarCurso($event)"
+        (estadoCambiado)="cambiarEstado($event)"
+      ></app-course-list>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>
